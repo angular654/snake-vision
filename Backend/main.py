@@ -4,8 +4,11 @@ from werkzeug.utils import secure_filename
 
 UPLOAD_FOLDER = 'files'
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'mp4', 'avi', 'ogg', 'MOV','WMV','FLV','AVI'])
+from flask_cors import CORS
+from flask import jsonify
 
 app = Flask(__name__)
+CORS(app)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 def allowed_file(filename):
     return '.' in filename and \
@@ -18,7 +21,7 @@ def upload_file():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            return file.filename + " uploaded!"
+            return jsonify(file.filename + " uploaded!")
 
 ### SEND CHUNKS
 CHUNK_SIZE = 8192
@@ -31,7 +34,7 @@ def read_file_chunks(path):
             else:
                 break
 @app.route('/download/<name>')
-def serve_video(name):
+def sending_file(name):
     fp = os.path.join(app.config['UPLOAD_FOLDER'], name)
     return Response(
         stream_with_context(read_file_chunks(fp)),
@@ -41,4 +44,4 @@ def serve_video(name):
     )
 
 if __name__ == "__main__":
-  app.run(debug=True, port=8000)
+    app.run(debug=True, port=8000)
