@@ -1,0 +1,37 @@
+.example-spacer {
+    flex: 1 1 abs($number: 2rem);
+  }
+mat-toolbar {
+    background-color: rgb(12, 122, 12);
+    color: rgb(241, 241, 241);
+}
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500);
+
+.custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+input[type="file"] {
+  display: flex;
+}
+.card {
+  padding-left: 20%;
+  padding-top: 20%;
+  padding-bottom: 50%;
+  padding-right: 20%;
+}
+.settings {
+  margin-top: 5px;
+  margin-left: 15rem;
+}
+#live-btn {
+  background-color: rgb(34, 158, 45);
+}
+.btn {
+  width: 60%;
+}
+.btns {
+  padding-left: 30%
+}
