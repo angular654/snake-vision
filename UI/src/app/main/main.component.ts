@@ -7,7 +7,7 @@ import { FileUploadService } from '../file-upload.service'
 })
 export class MainComponent implements OnInit {
   link: string = "";
-  search:string = "Опознанный питон"
+  search:string = ""
   loading: boolean = false;
   file: any = null;
   title: string = "snake-vision"
@@ -344,7 +344,7 @@ export class MainComponent implements OnInit {
         this.loading = false;
       }
     ).catch((err) => {
-      console.log(err)
+      this.link = err
     })
   }
   toLive() {

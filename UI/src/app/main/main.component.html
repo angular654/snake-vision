@@ -2,21 +2,38 @@
     <div class="btns">
         <input id="search" class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Задать параметры"
             aria-label="Search" (keyup)="onKey($event)">
-        <div height="300px">
+        <br>
         <ul *ngFor="let item of filteredData(types)">
             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
             <span class="badge badge-success">{{item.type}}</span>
         </ul>
-        </div>
         <br>
         <br>
-        <button type="button" class="btn btn-success" id="live-btn" (click)="toLive()">
-            Live распознование
-        </button>
-        <div *ngIf="live">
-            <iframe src="http://127.0.0.1:8000/" frameborder="0" width="100%" height="420px">
-            </iframe>
-        </div>
+        <button type="button" class="btn btn-success" data-toggle="modal" id="live-btn" (click)="toLive()" data-target="#exampleModal">
+            Launch demo modal
+          </button>
+          
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Live</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="toLive()">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <div *ngIf="live">
+                        <iframe src="http://127.0.0.1:8000/" frameborder="0" width="100%" height="420px">
+                        </iframe>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                </div>
+              </div>
+            </div>
+          </div>
         <br>
         <br>
         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter"
@@ -52,6 +69,7 @@
                     </div>
                     <div class="container" *ngIf="loading">
                         <h3>Loading ...</h3>
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                     </div>
 
                 </div>

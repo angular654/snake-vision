@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -13,8 +13,12 @@
     </ul>
     <form class="form-inline d-flex justify-content-center md-form form-sm active-purple active-purple-2 mt-2">
       <i class="fas fa-search" aria-hidden="true"></i>
-      <input id="search" class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Найти"
-        aria-label="Search" >
+        <input class="form-control py-2" type="search" value="" id="example-search-input" placeholder="Найти">
+        <span class="input-group-append">
+          <button class="btn btn-small-secondary" type="button" width="130%">
+            <i class="material-icons">search</i>
+          </button>
+        </span>
     </form>
   </div>
 </nav>
