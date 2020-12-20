@@ -1,0 +1,59 @@
+<div class="card">
+    <div class="btns">
+      <button type="button" class="btn btn-success" id="live-btn" (click)="toLive()">
+        Live распознование
+      </button>
+      <div *ngIf="live">
+        <iframe src="http://127.0.0.1:8000/" frameborder="0" width="100%" height="420px" >
+        </iframe>
+      </div>
+      <br>
+      <br>
+      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter" id="upload-btn">
+        Загрузить файл
+      </button>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Upload File</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <input class="form-control form-control-lg" id="formFileLg" (change)="onChange($event)" type="file"
+                accept=".jpg, .jpeg, .png, .mp4, .avi , .OGG, .MP4, .M4P, .M4V " />
+            </form>
+            <br>
+            <!--  
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0"
+                aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+            </div>
+            -->
+            <div class="container text-center jumbotron" *ngIf="link">
+              <h2>{{link}}</h2>
+            </div>
+            <div class="container" *ngIf="loading">
+              <h3>Loading ...</h3>
+            </div>
+  
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-success" (click)="onUpload()">Upload</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <script>
+      $('#myModal').on('shown.bs.modal', function () {
+        $('#myInput').trigger('focus')
+      })
+    </script>

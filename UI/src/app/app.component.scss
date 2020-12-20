@@ -1,43 +1,9 @@
-.example-spacer {
-    flex: 1 1 abs($number: 2rem);
-  }
-mat-toolbar {
-    background-color: rgb(12, 122, 12);
-    color: rgb(241, 241, 241);
-}
-@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500);
-
-.custom-file-upload {
-  border: 1px solid #ccc;
-  display: inline-block;
-  padding: 6px 12px;
-  cursor: pointer;
-}
-input[type="file"] {
-  display: flex;
-}
-.card {
-  padding-left: 20%;
-  padding-top: 10%;
-  padding-bottom: 50%;
-  padding-right: 20%;
-}
 .settings {
   position: absolute;
-  margin-left: 30%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   padding-bottom: 0.7%;
-}
-#live-btn {
-  background-color: rgb(34, 158, 45);
-}
-.btn {
-  width: 60%;
-}
-.btns {
-  padding-left: 30%
-}
-#live-rec {
-  height: 400px;
 }
 nav {
   height: 100px;
