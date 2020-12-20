@@ -18,13 +18,14 @@ input[type="file"] {
 }
 .card {
   padding-left: 20%;
-  padding-top: 20%;
+  padding-top: 10%;
   padding-bottom: 50%;
   padding-right: 20%;
 }
 .settings {
-  margin-top: 5px;
-  margin-left: 15rem;
+  position: absolute;
+  margin-left: 30%;
+  padding-bottom: 0.7%;
 }
 #live-btn {
   background-color: rgb(34, 158, 45);
@@ -34,4 +35,10 @@ input[type="file"] {
 }
 .btns {
   padding-left: 30%
+}
+#live-rec {
+  height: 400px;
+}
+nav {
+  height: 100px;
 }

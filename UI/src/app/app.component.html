@@ -4,7 +4,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent" >
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
         <img src="../assets/logo.jpg" width="60%" height="60%" class="logo">
@@ -20,9 +20,13 @@
 </nav>
 <div class="card">
   <div class="btns">
-    <button type="button" class="btn btn-success" id="live-btn">
-      Live рапознование
+    <button type="button" class="btn btn-success" id="live-btn" (click)="toLive()">
+      Live распознование
     </button>
+    <div *ngIf="live">
+      <iframe src="http://127.0.0.1:8000/" frameborder="0" width="100%" height="420px" >
+      </iframe>
+    </div>
     <br>
     <br>
     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter" id="upload-btn">

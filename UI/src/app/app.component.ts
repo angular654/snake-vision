@@ -10,7 +10,8 @@ export class AppComponent {
   link: string = "";
   loading: boolean = false; 
   file: any = null; 
- 
+  title:string = "snake-vision"
+  live: boolean = false
   constructor(private fileUploadService: FileUploadService) { }
 
   ngOnInit(): void {
@@ -30,5 +31,8 @@ export class AppComponent {
     ).catch((err) => {
       console.log(err)
     })
+  }
+  toLive() {
+    this.live = !this.live
   }
 }
